@@ -7,11 +7,12 @@ const Header = () => {
     const navMenu = [
         <li><Link>Home</Link></li>,
         <li><Link>Menu</Link></li>,
-        <li><Link>Service</Link></li>
+        <li><Link>Add Service</Link></li>,
+        <li><Link>My Reviews</Link></li>
     ];
 
     return (
-        <div className="navbar bg-base-100 border h-28">
+        <div className="navbar bg-white border h-28">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -30,12 +31,12 @@ const Header = () => {
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal px-1 text-lg">
                     {navMenu}
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link className="btn">Button</Link>
+                <Link to='' className="btn">Login</Link>
             </div>
         </div>
     );

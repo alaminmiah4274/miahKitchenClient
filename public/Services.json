@@ -1,0 +1,236 @@
+[
+    {
+        "title": "Rice Item",
+        "img": "https://i.ibb.co/KzRbbnL/rice-item.jpg",
+        "description": "",
+        "otherItems": [
+            {
+                "title": "Plain Rice",
+                "img": "https://i.ibb.co/LzGm5W3/sadaVat.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Dim Polao",
+                "img": "https://i.ibb.co/68QK9Qj/dimPolao.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Chicken Vuna Khichuri",
+                "img": "https://i.ibb.co/3rmzj6v/chicken-Vuna-Khichuri.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Plain Polao",
+                "img": "https://i.ibb.co/NYpdyPj/plain-Polao.jpg",
+                "price": "",
+                "description": ""
+            }
+        ]
+    },
+    {
+        "title": "Meat Item",
+        "img": "https://i.ibb.co/d0FKMXm/meat-item.jpg",
+        "description": "",
+        "otherItems": [
+            {
+                "title": "Beef Vuna",
+                "img": "https://i.ibb.co/ZGc9VSB/beefVuna.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Deshi Murgi Vuna",
+                "img": "https://i.ibb.co/cD6w1bC/deshi-Murgi-Vuna.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Broiler Murgi Vuna",
+                "img": "https://i.ibb.co/k9CHmbJ/murgi-Vuna.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Mutton Vuna",
+                "img": "https://i.ibb.co/bHTTFgx/mutton-Vuna.jpg",
+                "price": "",
+                "description": ""
+            }
+        ]
+    },
+    {
+        "title": "Fish Item",
+        "img": "https://i.ibb.co/W00HWDq/fish-item.jpg",
+        "description": "",
+        "otherItems": [
+            {
+                "title": "Ilish Fish Vuna",
+                "img": "https://i.ibb.co/M76sxS0/ilish-Fish-Vaji.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Koi Fish Vuna",
+                "img": "https://i.ibb.co/R9NVdB6/koi-Fish-Vuna.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Rui Fish Vuna",
+                "img": "https://i.ibb.co/sPHZJkq/rui-Fish-Vaji.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Shorputi Fish Vuna",
+                "img": "https://i.ibb.co/JsJ4zCG/shorputi-Fish-Vuna.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Shorshe Ilish",
+                "img": "https://i.ibb.co/99smcT7/sorshe-Ilish.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Telapia Fish Vuna",
+                "img": "https://i.ibb.co/NTMbTbN/telapia-Fish-Vaji.jpg",
+                "price": "",
+                "description": ""
+            }
+        ]
+    },
+    {
+        "title": "Dal & Vaji",
+        "img": "https://i.ibb.co/zfxq3QD/dal-vaji-item.jpg",
+        "description": "",
+        "otherItems": [
+            {
+                "title": "Begun Vaji",
+                "img": "https://i.ibb.co/vXgLd1n/begun-bhaja.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Dal Vuna",
+                "img": "https://i.ibb.co/GPg5HtJ/dalVuna.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Derosh Vaji",
+                "img": "https://i.ibb.co/TBPpcPG/derosh-Vaji.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Dim Vuna",
+                "img": "https://i.ibb.co/7z86fBG/dimVuna.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Korola Vaji",
+                "img": "https://i.ibb.co/qWJqMv1/korola-Vaji.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Moshur Dal",
+                "img": "https://i.ibb.co/71pcgCK/moshur-Dal.jpg",
+                "price": "",
+                "description": ""
+            }
+        ]
+    },
+    {
+        "title": "Vorta Item",
+        "img": "https://i.ibb.co/Ld1qtSv/vorta-item.png",
+        "description": "",
+        "otherItems": [
+            {
+                "title": "Alu Vorta",
+                "img": "https://i.ibb.co/7v98YLS/aluVorta.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Badam Vorta",
+                "img": "https://i.ibb.co/jkpC0Ny/badam-Vorta.gif",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Begun Vorta",
+                "img": "https://i.ibb.co/0F04DM6/begun-bhorta.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Dal Vorta",
+                "img": "https://i.ibb.co/p3s01mb/dalVorta.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Kalizira Vorta",
+                "img": "https://i.ibb.co/1fM5KS8/kalijira-Bhorta.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Kola Vorta",
+                "img": "https://i.ibb.co/ZWVySdq/kola-Vorta.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Sim Vorta",
+                "img": "https://i.ibb.co/PDPMjxb/simVorta.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Sutki Vorta",
+                "img": "https://i.ibb.co/0278rSX/sutki-Vorta.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Tomato Vorta",
+                "img": "https://i.ibb.co/FDGJnGQ/tomato-Vorta.jpg",
+                "price": "",
+                "description": ""
+            }
+        ]
+    },
+    {
+        "title": "Pitha Item",
+        "img": "https://i.ibb.co/1MC42XC/pitha-item.png",
+        "description": "",
+        "otherItems": [
+            {
+                "title": "Chioi Pitha",
+                "img": "https://i.ibb.co/3CSPr99/chitoi-Pitha.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Puli Pitha",
+                "img": "https://i.ibb.co/3CSPr99/chitoi-Pitha.jpg",
+                "price": "",
+                "description": ""
+            },
+            {
+                "title": "Vapa Pitha",
+                "img": "https://i.ibb.co/bJDPyG0/vapa-Pitha.jpg",
+                "price": "",
+                "description": ""
+            }
+        ]
+    }
+]

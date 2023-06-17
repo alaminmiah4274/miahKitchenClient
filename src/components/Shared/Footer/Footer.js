@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../../Assets/image/logo/logo.png';
 
 const Footer = () => {
     return (
-        <footer className="footer items-center p-4 bg-base-100 border text-neutral-content">
+        <footer className="footer items-center p-4 bg-white border text-gray-500 text-lg font-medium">
             <div className="items-center grid-flow-col">
-
-                <img src="" alt="" />
-                <p>Copyright © 2023 - All right reserved</p>
+                <img src={logo} alt="" width={100} />
+                <p>Copyright © 2023 <span className='text-black'>Miah Kitchen</span> | All right reserved</p>
             </div>
             <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
                 <Link>
