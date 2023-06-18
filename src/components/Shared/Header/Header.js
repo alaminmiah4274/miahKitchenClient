@@ -6,7 +6,7 @@ const Header = () => {
 
     const navMenu = [
         <li><Link to='/'>Home</Link></li>,
-        <li><Link>Menu</Link></li>,
+        <li><Link to='/menu'>Menu</Link></li>,
         <li><Link>Ordered Foods</Link></li>,
         <li><Link>My Reviews</Link></li>
     ];
