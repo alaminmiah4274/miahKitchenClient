@@ -5,9 +5,9 @@ import logo from '../../../Assets/image/logo/logo.png';
 const Header = () => {
 
     const navMenu = [
-        <li><Link>Home</Link></li>,
+        <li><Link to='/'>Home</Link></li>,
         <li><Link>Menu</Link></li>,
-        <li><Link>Add Service</Link></li>,
+        <li><Link>Ordered Foods</Link></li>,
         <li><Link>My Reviews</Link></li>
     ];
 
@@ -36,7 +36,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='' className="btn">Login</Link>
+                <Link to='' className="btn btn-primary">Login</Link>
             </div>
         </div>
     );
