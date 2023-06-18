@@ -6,7 +6,7 @@ const Menu = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('Services.json')
+        fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, []);
@@ -16,6 +16,7 @@ const Menu = () => {
             <div className='grid gap-10 grid-cols-3'>
                 {
                     services.map(service => <Items
+                        key={service._id}
                         service={service}
                     ></Items>)
                 }

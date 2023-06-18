@@ -1,22 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const Items = ({ service }) => {
+const FoodItemsCard = ({ item }) => {
 
-    const { _id, title, img, description } = service;
+    const { img, title, description, price } = item;
 
     return (
         <div className="card card-compact w-80 bg-white shadow-xl">
-            <figure><img src={img} alt="" className='h-52 w-screen' /></figure>
+            <figure><img src={img} alt="" className='h-48 w-screen' /></figure>
             <div className="card-body">
                 <h2 className="card-title">{title}</h2>
+                <h4 className='text-lg font-semibold'>Price: {price} tk</h4>
                 <p>{description}</p>
                 <div className="card-actions justify-end">
-                    <Link to={`/food/${_id}`}><button className="btn btn-primary">See Items</button></Link>
+                    <button className="btn btn-primary">Order Now</button>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Items;  
+export default FoodItemsCard;
