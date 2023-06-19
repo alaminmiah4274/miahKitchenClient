@@ -7,13 +7,16 @@ const Service = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('http://localhost:5000/service')
             .then(res => res.json())
             .then(data => setServices(data))
     }, []);
 
     return (
         <div className='w-4/5 mx-auto py-10'>
+            <div className='mb-10'>
+                <h1 className='text-center text-5xl underline'>Our Meal List</h1>
+            </div>
             <div className='grid gap-10 grid-cols-3'>
                 {
                     services.map(service => <ServiceCard

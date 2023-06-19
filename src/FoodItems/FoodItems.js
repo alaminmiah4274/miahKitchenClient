@@ -9,7 +9,7 @@ const FoodItems = () => {
 
     return (
         <div className='w-4/5 mx-auto py-10'>
-            <div className='grid gap-10 grid-cols-3'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
                 {
                     items.map((item, id) => <FoodItemsCard
                         key={id}
