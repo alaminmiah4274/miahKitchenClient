@@ -3,6 +3,8 @@ import Main from "../layout/Main";
 import Home from "../components/Home/Home";
 import Menu from "../components/Menu/Menu";
 import FoodItems from "../FoodItems/FoodItems";
+import Login from "../components/Login/Login";
+import Register from "../components/Register/Register";
 
 
 export const router = createBrowserRouter([
@@ -22,6 +24,14 @@ export const router = createBrowserRouter([
                 path: '/food/:id',
                 element: <FoodItems></FoodItems>,
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
             }
         ]
     }
