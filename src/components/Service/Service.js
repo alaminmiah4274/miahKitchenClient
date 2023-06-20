@@ -15,7 +15,7 @@ const Service = () => {
     return (
         <div className='w-4/5 mx-auto py-10'>
             <div className='mb-10'>
-                <h1 className='text-center text-5xl underline'>Our Meal List</h1>
+                <h1 className='text-center text-5xl font-bold underline'>Our Meal List</h1>
             </div>
             <div className='grid gap-10 grid-cols-3'>
                 {

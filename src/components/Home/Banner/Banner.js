@@ -1,7 +1,7 @@
 import React from 'react';
-import img1 from '../../../Assets/image/othersImg/section/img1.jpg';
-import img2 from '../../../Assets/image/othersImg/section/img2.jpg';
-import img3 from '../../../Assets/image/othersImg/section/img3.jpg';
+import img1 from '../../../Assets/image/othersImg/banner/img1.jpg';
+import img2 from '../../../Assets/image/othersImg/banner/img2.jpg';
+import img3 from '../../../Assets/image/othersImg/banner/img3.jpg';
 import BannerItem from './BannerItem';
 
 const Banner = () => {
