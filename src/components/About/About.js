@@ -10,7 +10,7 @@ const About = () => {
                         <img src={img} alt='' className="rounded-md" />
                     </div>
                     <div className='w-1/2 pl-5'>
-                        <h1 className="text-5xl font-bold">Miah Kitchen</h1>
+                        <h1 className="text-5xl font-semibold">Miah Kitchen</h1>
                         <p className="py-6">
                             Miah Kitchen is a cozy, family-owned restaurant located in the heart of Uttara. Miah, the owner and head chef, has been cooking for over 20 years and his passion for food is evident in every dish he creates. The menu at Miah Kitchen features a variety of Bangladeshi comfort food, all made with fresh, local ingredients. From classic Shorshe Elish and curry to more creative dishes like Beef Vuna and Mutton Vuna, there's something for everyone at Miah Kitchen. <br />
                             In addition to the delicious food, Miah Kitchen is also known for its on time delivery. Whether you're looking for a quick lunch or a leisurely dinner, Miah Kitchen is the perfect kitchen to order and enjoy a meal with friends and family. <br />
