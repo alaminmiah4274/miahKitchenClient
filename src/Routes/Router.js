@@ -23,6 +23,7 @@ export const router = createBrowserRouter([
             {
                 path: '/food/:id',
                 element: <FoodItems></FoodItems>,
+                // this fetch method is used to see food items in detail
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
