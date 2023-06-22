@@ -5,6 +5,7 @@ import Menu from "../components/Menu/Menu";
 import FoodItems from "../FoodItems/FoodItems";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
+import Blog from "../components/Blog/Blog";
 
 
 export const router = createBrowserRouter([
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             }
         ]
     }

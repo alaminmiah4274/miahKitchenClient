@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../Assets/image/logo/logo.png';
+import { AuthContext } from '../../Contexts/AuthProvider';
 
 const Header = () => {
 
-    const navMenu = [
-        <li><Link to='/'>Home</Link></li>,
-        <li><Link to='/menu'>Menu</Link></li>,
-        <li><Link>Ordered Foods</Link></li>,
-        <li><Link>My Reviews</Link></li>
-    ];
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleUserLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    };
+
+    const navMenu = <>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/menu'>Menu</Link></li>
+        <li><Link to='/blog'>Blog</Link></li>
+        {
+            user?.uid ? <>
+                <li><Link to=''>My Reviews</Link></li>
+                <li><Link to=''>Ordered Foods</Link></li>
+            </> :
+                ''
+        }
+    </>
 
     return (
         <div className="navbar bg-white sticky h-28">
@@ -36,7 +51,10 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/login' className="btn btn-primary">Login</Link>
+                {user?.uid ?
+                    <button onClick={handleUserLogOut} className="btn btn-primary">Log Out</button> :
+                    <Link to='/login' className="btn btn-primary">Login</Link>
+                }
             </div>
         </div>
     );
