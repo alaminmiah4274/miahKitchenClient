@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import google from '../../Assets/image/logo/googlelogo.png';
+import googleLogo from '../../Assets/image/logo/googlelogo.png';
 import { AuthContext } from '../Contexts/AuthProvider';
 
 const Login = () => {
 
-    const { userLogIn } = useContext(AuthContext);
+    const { userLogIn, google } = useContext(AuthContext);
 
     const handleLogInForm = e => {
         e.preventDefault();
@@ -19,6 +19,15 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+            })
+            .catch(err => console.error(err))
+    };
+
+    const handleGoogleLogin = () => {
+        google()
+            .then(result => {
+                const user = result.user;
+                console.log(`To use google: ${user}`);
             })
             .catch(err => console.error(err))
     };
@@ -49,10 +58,10 @@ const Login = () => {
                     </form>
                     <p className='text-center mb-5'>New to Miah Kitchen? <Link to='/register'>register</Link></p>
                     <p className='text-center font-medium'>or</p>
-                    <div className='border rounded-full m-5 flex items-center '>
-                        <img src={google} alt="" width={40} />
-                        <p className='ms-14'>Continue with Google</p>
-                    </div>
+                    <button onClick={handleGoogleLogin} className='border rounded-full w-3/5 mx-auto my-5 flex items-center'>
+                        <img src={googleLogo} alt="" width={40} />
+                        <p className='ms-3'>Continue with Google</p>
+                    </button>
                 </div>
             </div>
         </div >
