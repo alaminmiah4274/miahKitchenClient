@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, updateProfile } from 'firebase/auth';
 import app from '../../Firebase/Firebase.config';
 
 export const AuthContext = createContext();
@@ -9,9 +9,8 @@ const AuthProvider = ({ children }) => {
 
     // current user will get to use this state 
     const [user, setUser] = useState('');
-
-    // google provider to get popup interface
-    const googleProvider = new GoogleAuthProvider();
+    // to get all error occured in different pages
+    const [error, setError] = useState('');
 
     // to create user
     const userCreate = (email, password) => {
@@ -20,12 +19,12 @@ const AuthProvider = ({ children }) => {
 
     // to get loged in user
     useEffect(() => {
-        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+        const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
             console.log(currentUser);
         });
         return () => {
-            return unSubscribe();
+            unSubscribe();
         };
     }, []);
 
@@ -35,16 +34,24 @@ const AuthProvider = ({ children }) => {
     };
 
     // to sign in using google
-    const google = () => {
-        return signInWithPopup(auth, googleProvider);
+    const providerLogin = (provider) => {
+        return signInWithPopup(auth, provider);
+    };
+
+    // user profile update
+    const userProfileUpdate = (profile) => {
+        return updateProfile(auth.currentUser, profile);
     };
 
     // auth value
     const authInfo = {
         user,
+        error,
+        setError,
         userCreate,
         userLogIn,
-        google,
+        providerLogin,
+        userProfileUpdate,
     };
 
     return (

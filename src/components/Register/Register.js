@@ -4,24 +4,46 @@ import { AuthContext } from '../Contexts/AuthProvider';
 
 const Register = () => {
 
-    const { userCreate } = useContext(AuthContext);
+    const { userCreate, userProfileUpdate, error, setError } = useContext(AuthContext);
 
     const handleRegisterForm = e => {
         e.preventDefault();
 
         const form = e.target;
         const name = form.name.value;
-        const image = form.image.value;
+        const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
 
+        // to create a new user
         userCreate(email, password)
             .then(result => {
-                const user = result.user;
-                console.log(user);
+                handleUserProfileUpdate(name, photoURL);
                 form.reset();
+                alert(error ? error : 'Registered successfully');
             })
-            .catch(err => console.error(err))
+            .catch(error => {
+                const errorMessage = error.message;
+                setError(errorMessage);
+                alert(error);
+                console.error(error)
+            })
+
+        // to get user name and photoURL
+        const handleUserProfileUpdate = (name, photoURL) => {
+            const profile = {
+                displayName: name,
+                photoURL: photoURL
+            };
+
+            userProfileUpdate(profile)
+                .then(() => { })
+                .catch(error => {
+                    const errorMessage = error.message;
+                    setError(errorMessage);
+                    console.error(error)
+                })
+        };
     };
 
     return (
@@ -40,9 +62,9 @@ const Register = () => {
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Image</span>
+                                <span className="label-text">Photo URL</span>
                             </label>
-                            <input type="url" name='image' placeholder="Your image" className="input input-bordered" />
+                            <input type="url" name='photoURL' placeholder="Your photo url" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">

@@ -2,10 +2,13 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import googleLogo from '../../Assets/image/logo/googlelogo.png';
 import { AuthContext } from '../Contexts/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
 
-    const { userLogIn, google } = useContext(AuthContext);
+    const { userLogIn, providerLogin, error, setError } = useContext(AuthContext);
+
+    const googleProvider = new GoogleAuthProvider();
 
     const handleLogInForm = e => {
         e.preventDefault();
@@ -17,17 +20,23 @@ const Login = () => {
         userLogIn(email, password)
             .then(result => {
                 const user = result.user;
+                alert(error ? error : 'Loged in successfully');
                 console.log(user);
                 form.reset();
             })
-            .catch(err => console.error(err))
+            .catch(err => {
+                const errorMessage = err.message;
+                setError(errorMessage);
+                alert(error);
+                console.error(err)
+            })
     };
 
     const handleGoogleLogin = () => {
-        google()
+        providerLogin(googleProvider)
             .then(result => {
                 const user = result.user;
-                console.log(`To use google: ${user}`);
+                console.log(user);
             })
             .catch(err => console.error(err))
     };
