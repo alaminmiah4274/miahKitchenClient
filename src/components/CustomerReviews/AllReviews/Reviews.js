@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Reviews = ({ review }) => {
-    console.log(review);
 
     const { customerReview, customerName, photoURL, foodItem } = review;
 

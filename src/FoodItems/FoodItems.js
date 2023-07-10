@@ -1,11 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import FoodItemsCard from './FoodItemsCard';
 import { AuthContext } from '../components/Contexts/AuthProvider';
 import ReviewModal from '../components/CustomerReviews/ReviewModal/ReviewModal';
-import AllReviews from '../components/CustomerReviews/AllReviews/AllReviews';
+import Reviews from '../components/CustomerReviews/AllReviews/Reviews';
 
 const FoodItems = () => {
+
+    // reviews state
+    const [reviews, setReviews] = useState([]);
 
     // to get context data 
     const { user } = useContext(AuthContext);
@@ -13,6 +16,15 @@ const FoodItems = () => {
     // to get individual food item
     const itemsData = useLoaderData();
     const items = itemsData.otherItems;
+
+    // to show all reviews 
+    useEffect(() => {
+
+        fetch('http://localhost:5000/reviews')
+            .then(res => res.json())
+            .then(data => setReviews(data))
+
+    }, []);
 
     // to submit review modal data 
     const handleReviewSubmit = (e) => {
@@ -73,14 +85,14 @@ const FoodItems = () => {
 
             {/* customer rewiew section */}
             <div>
-                <h1 className='text-3xl text-center font-semibold py-10'>Customer Reviews</h1>
+                <h1 className='text-5xl text-center font-bold py-10'>Customer Reviews</h1>
 
-                <div className='flex justify-between'>
+                <div className='flex flex-col lg:flex-row md:flex-col sm:flex-col'>
                     <div>
-                        <h1>Review these items</h1>
+                        <h1 className='text-2xl font-semibold'>Review these items</h1>
                         <p>Share your thoughts with other customers</p>
 
-                        <button className='border rounded-full p-1 w-72'>
+                        <button className='border border-black rounded-full p-1 w-72 mt-5'>
 
                             {user?.uid ?
                                 <p onClick={() => window.myReviewModal.showModal()}>Write a customer review</p> :
@@ -98,7 +110,12 @@ const FoodItems = () => {
                     </div>
 
                     <div>
-                        <AllReviews></AllReviews>
+                        {
+                            reviews.map(review => <Reviews
+                                key={review._id}
+                                review={review}
+                            ></Reviews>)
+                        }
                     </div>
                 </div>
 
