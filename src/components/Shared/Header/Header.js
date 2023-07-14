@@ -19,8 +19,8 @@ const Header = () => {
         <li><Link to='/blog'>Blog</Link></li>
         {
             user?.uid ? <>
-                <li><Link to=''>My Reviews</Link></li>
-                <li><Link to=''>Ordered Foods</Link></li>
+                <li><Link to='/reviews'>My Reviews</Link></li>
+                <li><Link to='/ordered'>Ordered Foods</Link></li>
             </> :
                 ''
         }

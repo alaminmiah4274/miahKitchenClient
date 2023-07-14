@@ -37,13 +37,15 @@ const FoodItems = () => {
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const itemsName = itemsData.title;
+        const itemsId = itemsData._id;
 
         const review = {
             customerName: name,
             photoURL,
             email,
             customerReview,
-            foodItem: itemsName
+            foodItem: itemsName,
+            foodItemId: itemsId
         };
 
         // to send review data to the database

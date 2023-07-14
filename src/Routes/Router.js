@@ -6,6 +6,9 @@ import FoodItems from "../FoodItems/FoodItems";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import Blog from "../components/Blog/Blog";
+import MyReviews from "../components/MyReviews/MyReviews";
+import OrderedFoods from "../components/OrderedFoods/OrderedFoods";
+import PrivateRoute from "./PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -38,6 +41,14 @@ export const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/reviews',
+                element: <MyReviews></MyReviews>
+            },
+            {
+                path: '/ordered',
+                element: <OrderedFoods></OrderedFoods>
             }
         ]
     }
