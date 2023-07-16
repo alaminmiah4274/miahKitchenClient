@@ -4,6 +4,7 @@ const FoodItemsCard = ({ item }) => {
 
     const { img, title, description, price } = item;
 
+    // to send order data to the database 
     const handleOrderButton = id => {
 
         const orderItem = {
@@ -11,6 +12,21 @@ const FoodItemsCard = ({ item }) => {
             image: img,
             price
         };
+
+        fetch('http://localhost:5000/orders', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(orderItem)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.acknowledged) {
+                    alert('Order taken successfully');
+                }
+            })
     };
 
     return (
@@ -24,7 +40,7 @@ const FoodItemsCard = ({ item }) => {
                 <h4 className='text-lg font-semibold'>Price: {price} tk</h4>
                 <p>{description}</p>
 
-                <div className="card-actions justify-end">
+                <div onClick={handleOrderButton} className="card-actions justify-end">
                     <button className="btn btn-primary">Order Now</button>
                 </div>
             </div>

@@ -8,7 +8,6 @@ import Register from "../components/Register/Register";
 import Blog from "../components/Blog/Blog";
 import MyReviews from "../components/MyReviews/MyReviews";
 import OrderedFoods from "../components/OrderedFoods/OrderedFoods";
-import PrivateRoute from "./PrivateRoute";
 
 
 export const router = createBrowserRouter([

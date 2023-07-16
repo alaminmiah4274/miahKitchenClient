@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Items from './Items';
+import MenuItems from './MenuItems';
 
 const Menu = () => {
 
@@ -15,10 +15,10 @@ const Menu = () => {
         <div className='w-4/5 mx-auto py-10'>
             <div className='grid gap-10 grid-cols-3'>
                 {
-                    services.map(service => <Items
+                    services.map(service => <MenuItems
                         key={service._id}
                         service={service}
-                    ></Items>)
+                    ></MenuItems>)
                 }
             </div>
         </div>

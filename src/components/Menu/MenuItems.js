@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Items = ({ service }) => {
+const MenuItems = ({ service }) => {
 
     const { _id, title, img, description } = service;
 
@@ -19,4 +19,4 @@ const Items = ({ service }) => {
     );
 };
 
-export default Items;  
+export default MenuItems;  
