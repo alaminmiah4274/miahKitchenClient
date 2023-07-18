@@ -4,7 +4,7 @@ import MyReviewsCard from './MyReviewsCard';
 
 const MyReviews = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, loading, setLoading } = useContext(AuthContext);
 
     // to store review data
     const [reviews, setReviews] = useState([]);
@@ -12,10 +12,14 @@ const MyReviews = () => {
     // to get specific review data using email given by individual customer 
     useEffect(() => {
 
+        setLoading(true);
         fetch(`http://localhost:5000/review?email=${user?.email}`)
             .then(res => res.json())
-            .then(data => setReviews(data))
-    }, [user?.email]);
+            .then(data => {
+                setReviews(data);
+                setLoading(false);
+            })
+    }, [user?.email, setLoading]);
 
     // to delete review from database
     const handleDeleteReview = id => {
@@ -37,12 +41,16 @@ const MyReviews = () => {
         }
     };
 
+    if (loading) {
+        return <div className='text-center py-44'><span className="loading loading-spinner text-primary loading-lg"></span></div>;
+    }
+
     return (
         <div className="overflow-x-auto py-28">
             {
                 // to show individual review if the user gave any review 
                 reviews.length === 0 ?
-                    <p className='text-5xl text-center py-32'>No reviews were added</p>
+                    <p className='text-5xl text-center py-28'>No reviews were added</p>
                     :
                     <table className="table">
                         <tbody>

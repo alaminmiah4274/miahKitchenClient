@@ -11,9 +11,12 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState('');
     // to get all error occured in different pages
     const [error, setError] = useState('');
+    // to show spinner
+    const [loading, setLoading] = useState(true);
 
     // to create user
     const userCreate = (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     };
 
@@ -21,6 +24,7 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
+            setLoading(false);
             console.log(currentUser);
         });
         return () => {
@@ -30,6 +34,7 @@ const AuthProvider = ({ children }) => {
 
     // to sign in user
     const userLogIn = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     };
 
@@ -52,6 +57,8 @@ const AuthProvider = ({ children }) => {
     const authInfo = {
         user,
         error,
+        loading,
+        setLoading,
         setError,
         userCreate,
         userLogIn,
