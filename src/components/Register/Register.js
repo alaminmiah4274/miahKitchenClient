@@ -1,10 +1,14 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Contexts/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
 
     const { userCreate, userProfileUpdate, error, setError } = useContext(AuthContext);
+
+    // to show title name 
+    useTitle('Register');
 
     const handleRegisterForm = e => {
         e.preventDefault();

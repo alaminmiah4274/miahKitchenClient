@@ -1,11 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import MenuItems from './MenuItems';
 import { AuthContext } from '../Contexts/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Menu = () => {
 
     const [services, setServices] = useState([]);
     const { loading, setLoading } = useContext(AuthContext);
+
+    // to show title name 
+    useTitle('Menu');
 
     useEffect(() => {
         setLoading(true);

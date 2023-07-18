@@ -1,11 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import OrderedFoodsCard from './OrderedFoodsCard';
 import { AuthContext } from '../Contexts/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const OrderedFoods = () => {
 
     const { loading, setLoading } = useContext(AuthContext);
     const [orders, setOrders] = useState([]);
+
+    // to show title name 
+    useTitle('Ordered Foods');
 
     // to load orders data from the database 
     useEffect(() => {
@@ -21,7 +25,7 @@ const OrderedFoods = () => {
 
     if (loading) {
         return <div className='text-center py-44'><span className="loading loading-spinner text-primary loading-lg"></span></div>;
-    }
+    };
 
     return (
         <div className="overflow-x-auto py-10">

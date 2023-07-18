@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Contexts/AuthProvider';
 import MyReviewsCard from './MyReviewsCard';
+import useTitle from '../../hooks/useTitle';
 
 const MyReviews = () => {
 
@@ -8,6 +9,9 @@ const MyReviews = () => {
 
     // to store review data
     const [reviews, setReviews] = useState([]);
+
+    // to show title name 
+    useTitle('My Reviews');
 
     // to get specific review data using email given by individual customer 
     useEffect(() => {
@@ -43,7 +47,7 @@ const MyReviews = () => {
 
     if (loading) {
         return <div className='text-center py-44'><span className="loading loading-spinner text-primary loading-lg"></span></div>;
-    }
+    };
 
     return (
         <div className="overflow-x-auto py-28">

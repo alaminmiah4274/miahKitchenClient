@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import googleLogo from '../../Assets/image/logo/googlelogo.png';
 import { AuthContext } from '../Contexts/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
 
@@ -11,6 +12,9 @@ const Login = () => {
 
     // google login auth provider
     const googleProvider = new GoogleAuthProvider();
+
+    // to show title name 
+    useTitle('Login');
 
     // login form handling function
     const handleLogInForm = e => {
