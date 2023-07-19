@@ -32,7 +32,27 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 alert(error ? error : 'Loged in successfully');
-                console.log(user);
+
+                // to send user email to the server for getting jwt token 
+                const currentUser = {
+                    email: user.email
+                };
+
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+
+                        // to set token in the local storage 
+                        localStorage.setItem('miah-token', data.token);
+                    })
+
+                // to empty all field of the form 
                 form.reset();
             })
 

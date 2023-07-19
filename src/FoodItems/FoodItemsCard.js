@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../components/Contexts/AuthProvider';
 
 const FoodItemsCard = ({ item }) => {
 
     const { img, title, description, price } = item;
+    const { user } = useContext(AuthContext);
 
     // to send order data to the database 
-    const handleOrderButton = id => {
+    const handleOrderButton = () => {
 
         const orderItem = {
             name: title,
             image: img,
-            price
+            price,
+            email: user.email
         };
 
         fetch('http://localhost:5000/orders', {

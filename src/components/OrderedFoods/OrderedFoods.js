@@ -5,7 +5,7 @@ import useTitle from '../../hooks/useTitle';
 
 const OrderedFoods = () => {
 
-    const { loading, setLoading } = useContext(AuthContext);
+    const { user, loading, setLoading } = useContext(AuthContext);
     const [orders, setOrders] = useState([]);
 
     // to show title name 
@@ -13,16 +13,23 @@ const OrderedFoods = () => {
 
     // to load orders data from the database 
     useEffect(() => {
+
         setLoading(true);
-        fetch('http://localhost:5000/orders')
+
+        fetch(`http://localhost:5000/orders?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('miah-token')}`
+            }
+        })
             .then(res => res.json())
             .then(data => {
                 setOrders(data);
                 setLoading(false);
             })
 
-    }, [setLoading]);
+    }, [user?.email, setLoading]);
 
+    // to show spinner 
     if (loading) {
         return <div className='text-center py-44'><span className="loading loading-spinner text-primary loading-lg"></span></div>;
     };
