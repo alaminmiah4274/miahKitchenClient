@@ -7,6 +7,12 @@ const FoodItemsCard = ({ item }) => {
 
 	// to send order data to the database
 	const handleOrderButton = () => {
+		// preventing the user from order without login
+		if (!user?.uid) {
+			alert("You need to login");
+			return;
+		}
+
 		const orderItem = {
 			name: title,
 			image: img,
